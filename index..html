@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LawyerAdvertising.com — Vanity Phone Numbers & Domains for Law Firms</title>
+<style>
+  :root{
+    --navy: #0b1f3a;
+    --navy-light: #142c52;
+    --gold: #c9a256;
+    --gold-light: #e6c878;
+    --ink: #1c2530;
+    --muted: #5b6b7f;
+    --paper: #f7f6f2;
+    --white: #ffffff;
+    --line: #e3e1da;
+    --radius: 10px;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height:1.55;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .container{ max-width:1120px; margin:0 auto; padding:0 24px; }
+  section{ padding:88px 0; }
+  h1,h2,h3{ font-family: Georgia, "Times New Roman", serif; letter-spacing:.2px; }
+  .eyebrow{
+    display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:1.6px;
+    text-transform:uppercase; color: var(--gold); margin-bottom:14px;
+  }
+  .section-head{ text-align:center; max-width:680px; margin:0 auto 48px; }
+  .section-head h2{ font-size:2rem; color:var(--navy); margin-bottom:14px; }
+  .section-head p{ color:var(--muted); font-size:1.05rem; }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background: rgba(11,31,58,0.97);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1120px; margin:0 auto; }
+  .logo{ display:flex; align-items:center; gap:10px; }
+  .logo-mark{
+    width:38px; height:38px; border-radius:8px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-family: Georgia, serif; font-weight:700; color:var(--navy); font-size:1.1rem;
+  }
+  .logo-text{ color:#fff; font-weight:700; font-size:1.05rem; line-height:1.1; }
+  .logo-text span{ display:block; font-weight:400; font-size:.72rem; color:#b9c3d4; letter-spacing:.5px; }
+  nav ul{ list-style:none; display:flex; gap:30px; }
+  nav a{ color:#dfe5ee; font-size:.92rem; font-weight:500; transition:color .15s; }
+  nav a:hover{ color: var(--gold-light); }
+  .nav-cta{
+    background: var(--gold); color:var(--navy); padding:10px 18px; border-radius:6px;
+    font-weight:700; font-size:.88rem; white-space:nowrap;
+  }
+  .nav-cta:hover{ background: var(--gold-light); }
+  .mobile-toggle{ display:none; background:none; border:none; color:#fff; font-size:1.4rem; cursor:pointer; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background: radial-gradient(1100px 480px at 80% -10%, #1a3a6b 0%, var(--navy) 55%), var(--navy);
+    color:#fff; padding:100px 0 90px; position:relative; overflow:hidden;
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:8px; background:rgba(201,162,86,0.14);
+    border:1px solid rgba(201,162,86,0.4); color:var(--gold-light); font-size:.82rem;
+    padding:7px 14px; border-radius:999px; margin-bottom:26px; font-weight:600;
+  }
+  .hero-attention{
+    font-size:.95rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;
+    color:var(--gold-light); margin-bottom:14px;
+  }
+  .hero h1{ font-size:2.6rem; line-height:1.15; margin-bottom:18px; }
+  .hero .phone-hero{
+    display:inline-block; font-family: Georgia, serif; color:var(--gold-light);
+    border-bottom:3px solid var(--gold); padding-bottom:4px;
+  }
+  .hero p.lead{ font-size:1.12rem; color:#cdd7e6; max-width:520px; margin-bottom:32px; }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:7px;
+    font-weight:700; font-size:.95rem; cursor:pointer; border:none; transition:transform .12s, background .15s;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-primary{ background:var(--gold); color:var(--navy); }
+  .btn-primary:hover{ background:var(--gold-light); }
+  .btn-ghost{ background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.35); }
+  .btn-ghost:hover{ border-color:#fff; }
+  .hero-stats{ display:flex; gap:34px; }
+  .hero-stats div strong{ display:block; font-size:1.5rem; color:#fff; font-family:Georgia,serif; }
+  .hero-stats div span{ font-size:.8rem; color:#9fb0c6; }
+
+  .hero-card{
+    background: var(--white); border-radius:14px; padding:30px; color:var(--ink);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  }
+  .hero-card h3{ font-size:1rem; color:var(--navy); margin-bottom:6px; }
+  .hero-card p.small{ color:var(--muted); font-size:.85rem; margin-bottom:18px; }
+  .price-tag{ display:flex; align-items:baseline; gap:6px; margin-bottom:20px; }
+  .price-tag strong{ font-size:2.1rem; color:var(--navy); font-family:Georgia,serif; }
+  .price-tag span{ color:var(--muted); font-size:.9rem; }
+  .hero-list{ list-style:none; }
+  .hero-list li{
+    display:flex; gap:10px; align-items:flex-start; font-size:.9rem; color:var(--ink);
+    padding:8px 0; border-top:1px solid var(--line);
+  }
+  .hero-list li:first-child{ border-top:none; }
+  .check{ color:var(--gold); font-weight:700; }
+
+  /* ---------- How it works ---------- */
+  .how-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .how-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; text-align:left;
+  }
+  .how-num{
+    width:34px; height:34px; border-radius:50%; background:var(--navy); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-family:Georgia,serif; margin-bottom:16px;
+  }
+  .how-card h3{ font-size:1.02rem; color:var(--navy); margin-bottom:8px; font-family:inherit; font-weight:700; }
+  .how-card p{ font-size:.9rem; color:var(--muted); }
+
+  /* ---------- Numbers ---------- */
+  .numbers-section{ background:var(--navy); color:#fff; }
+  .numbers-section .section-head h2{ color:#fff; }
+  .numbers-section .section-head p{ color:#b9c3d4; }
+  .price-pill{
+    display:inline-flex; gap:8px; align-items:center; background:rgba(201,162,86,0.15);
+    border:1px solid rgba(201,162,86,0.4); color:var(--gold-light); padding:6px 16px;
+    border-radius:999px; font-size:.85rem; font-weight:600; margin-bottom:20px;
+  }
+  .num-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px; }
+  .num-chip{
+    background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12);
+    border-radius:9px; padding:16px 18px; font-family:Georgia,serif; font-size:1.02rem;
+    letter-spacing:.3px; color:#fff; transition:background .15s, border-color .15s;
+  }
+  .num-chip:hover{ background: rgba(201,162,86,0.12); border-color:var(--gold); }
+  .num-chip small{ display:block; font-family:-apple-system,sans-serif; font-size:.72rem; color:#9fb0c6; margin-top:4px; letter-spacing:0; }
+  .numbers-footnote{ font-size:.8rem; color:#8fa0b8; max-width:760px; margin-top:28px; line-height:1.6; }
+
+  /* ---------- Domains ---------- */
+  .domain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .domain-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+  }
+  .domain-card h3{
+    font-family:-apple-system,sans-serif; font-size:.78rem; font-weight:700; letter-spacing:1.2px;
+    text-transform:uppercase; color:var(--gold); margin-bottom:14px; border-bottom:1px solid var(--line); padding-bottom:12px;
+  }
+  .domain-card ul{ list-style:none; }
+  .domain-card li{ margin-bottom:10px; }
+  .domain-card a{
+    font-size:.95rem; color:var(--navy); font-weight:600; word-break:break-word;
+  }
+  .domain-card a:hover{ color: var(--gold); text-decoration:underline; }
+
+  /* ---------- Video ---------- */
+  .video-section{ background:var(--white); }
+  .video-wrap{
+    position:relative; display:block; padding-bottom:56.25%; height:0; overflow:hidden;
+    border-radius:14px; box-shadow:0 24px 50px rgba(11,31,58,0.18); max-width:820px; margin:0 auto;
+    background:var(--navy); cursor:pointer;
+  }
+  .video-wrap img{
+    position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:transform .2s;
+  }
+  .video-wrap:hover img{ transform:scale(1.03); }
+  .video-wrap .play-button{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:78px; height:78px; border-radius:50%; background:rgba(201,162,86,0.94);
+    color:var(--navy); display:flex; align-items:center; justify-content:center;
+    font-size:1.6rem; padding-left:6px; box-shadow:0 12px 30px rgba(0,0,0,0.4); transition:background .15s, transform .15s;
+  }
+  .video-wrap:hover .play-button{ background:var(--gold-light); transform:translate(-50%,-50%) scale(1.06); }
+  .video-caption{ text-align:center; margin-top:16px; font-size:.88rem; color:var(--muted); font-weight:600; }
+
+  /* ---------- Terms ---------- */
+  .terms{ background:var(--paper); }
+  .terms .container{ max-width:820px; }
+  .terms-box{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:30px 34px;
+  }
+  .terms-box h3{ font-size:1.05rem; color:var(--navy); margin-bottom:14px; }
+  .terms-box ul{ padding-left:20px; color:var(--muted); font-size:.92rem; }
+  .terms-box li{ margin-bottom:8px; }
+
+  /* ---------- Contact ---------- */
+  .contact-section{ background: var(--navy); color:#fff; }
+  .contact-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; }
+  .contact-info h2{ font-size:1.9rem; margin-bottom:16px; color:#fff; }
+  .contact-info p.lead{ color:#b9c3d4; margin-bottom:30px; }
+  .info-row{ display:flex; gap:14px; align-items:flex-start; margin-bottom:22px; }
+  .info-icon{
+    width:40px; height:40px; border-radius:8px; background:rgba(201,162,86,0.15);
+    border:1px solid rgba(201,162,86,0.4); display:flex; align-items:center; justify-content:center;
+    color:var(--gold-light); font-size:1.1rem; flex-shrink:0;
+  }
+  .info-row strong{ display:block; font-size:.85rem; color:#9fb0c6; text-transform:uppercase; letter-spacing:.6px; margin-bottom:4px; }
+  .info-row a, .info-row span{ font-size:1.05rem; color:#fff; }
+
+  .contact-form{ background:#fff; border-radius:14px; padding:32px; color:var(--ink); }
+  .contact-form h3{ font-size:1.1rem; color:var(--navy); margin-bottom:6px; }
+  .contact-form p.small{ font-size:.85rem; color:var(--muted); margin-bottom:22px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+  .form-field{ display:flex; flex-direction:column; gap:6px; }
+  .form-field.full{ grid-column:1 / -1; }
+  label{ font-size:.8rem; font-weight:600; color:var(--navy); }
+  input, textarea, select{
+    border:1px solid var(--line); border-radius:7px; padding:11px 12px; font-size:.92rem;
+    font-family:inherit; color:var(--ink); background:var(--paper);
+  }
+  input:focus, textarea:focus, select:focus{ outline:2px solid var(--gold); outline-offset:1px; }
+  textarea{ resize:vertical; min-height:90px; }
+  .submit-btn{
+    width:100%; background:var(--navy); color:#fff; border:none; padding:14px; border-radius:7px;
+    font-weight:700; font-size:.95rem; cursor:pointer; margin-top:4px;
+  }
+  .submit-btn:hover{ background:var(--navy-light); }
+
+  /* ---------- Footer ---------- */
+  footer{ background:#08152a; color:#8997ac; padding:34px 0; font-size:.82rem; }
+  .footer-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .footer-row a{ color:#b9c3d4; }
+  .footer-row a:hover{ color:var(--gold-light); }
+
+  @media (max-width: 880px){
+    nav, .nav-cta{ display:none; }
+    .mobile-toggle{ display:block; }
+    .hero-grid, .contact-grid{ grid-template-columns:1fr; }
+    .how-grid{ grid-template-columns:repeat(2,1fr); }
+    .num-grid{ grid-template-columns:repeat(2,1fr); }
+    .domain-grid{ grid-template-columns:1fr 1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .hero h1{ font-size:2rem; }
+  }
+  @media (max-width:560px){
+    .how-grid, .domain-grid{ grid-template-columns:1fr; }
+    .num-grid{ grid-template-columns:1fr; }
+    section{ padding:60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">
+      <div class="logo-mark">LA</div>
+      <div class="logo-text">LawyerAdvertising.com
+        <span>Vanity Numbers &amp; Domains for Law Firms</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#numbers">Vanity Numbers</a></li>
+        <li><a href="#domains">Domains</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:9548571819" class="nav-cta">Call/Text 954-857-1819</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-attention">Attention Personal Injury Lawyers:</div>
+      <h1><span class="phone-hero">1-800-BAD-ACCIDENT</span><br>Can be your office number.</h1>
+      <p class="lead">
+        Calls placed to your vanity number from consumers ring directly to your office — no
+        middleman, no referral fees. Great for injury attorneys and other legal practices.
+        From local to national campaigns, we have you covered.
+      </p>
+      <div class="hero-badge">★ Not a referral service — calls ring straight to your office</div>
+      <div class="hero-ctas">
+        <a href="tel:9548571819" class="btn btn-primary">Call or Text 954-857-1819</a>
+        <a href="#numbers" class="btn btn-ghost">See Available Numbers &amp; Domains</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>$60/mo</strong><span>Starting price*</span></div>
+        <div><strong>1</strong><span>Lawyer per area code</span></div>
+        <div><strong>No</strong><span>New phone line needed</span></div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Vanity PI Campaign Number License</h3>
+      <p class="small">Starting at just $99/month for a single area code.</p>
+      <div class="price-tag"><strong>$99</strong><span>/ month*</span></div>
+      <ul class="hero-list">
+        <li><span class="check">✓</span> Keep your existing phone number</li>
+        <li><span class="check">✓</span> No additional phone line required</li>
+        <li><span class="check">✓</span> Affordable short or long-term license</li>
+        <li><span class="check">✓</span> Exclusive per area code / exchange</li>
+        <li><span class="check">✓</span> Letters appear on nearly every smartphone dial-pad</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Simple. Exclusive. Effective.</h2>
+      <p>This is not a referral program. Here's what makes vanity numbers such a powerful marketing tool for your firm.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h3>Calls ring your office</h3>
+        <p>Calls placed to your vanity number from consumers ring directly to your office phone — every lead comes straight to you.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h3>Keep your number</h3>
+        <p>You don't need an additional phone line, and you keep your existing office phone number.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h3>One lawyer per area code</h3>
+        <p>For example, if you hold the license for area code 212, callers dialing from a 212 number reach your office. (In some states, licenses apply to a group of local exchanges rather than an area code.)</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">4</div>
+        <h3>Easy to dial, easy to remember</h3>
+        <p>The vast majority of smartphones today show letters on the dial-pad, so vanity numbers are very easy to dial and recall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="numbers-section" id="numbers">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Available now</div>
+      <h2>Top-notch Personal Injury 800 numbers</h2>
+      <p>Make an incredible campaign. Bring in incredible results.</p>
+    </div>
+    <div class="price-pill">Starting at $60/month*</div>
+    <div class="num-grid">
+      <div class="num-chip">1-800-BAD-ACCIDENT<small>Injury</small></div>
+      <div class="num-chip">1-800-BIG-INJURY<small>Injury</small></div>
+      <div class="num-chip">1-800-TRIAL-ATTORNEY<small>General / Injury</small></div>
+      <div class="num-chip">1-800-AWFUL-PAIN<small>Injury</small></div>
+      <div class="num-chip">1-800-ASK-ATTORNEY<small>General</small></div>
+      <div class="num-chip">1-800-NEARBY-ATTORNEY<small>General</small></div>
+      <div class="num-chip">1-800-ARBITRATION<small>Arbitration</small></div>
+      <div class="num-chip">1-800-MY LAW-EXPERT<small>General</small></div>
+      <div class="num-chip">1-800-ASK-ACCIDENT<small>Injury</small></div>
+      <div class="num-chip">1-800-ASK-THE-INJURY-LAWYER<small>Injury</small></div>
+      <div class="num-chip">1-888-TRIAL-ATTORNEY<small>General</small></div>
+      <div class="num-chip">1-888-NEARBY-ATTORNEY<small>General</small></div>
+      <div class="num-chip">1-877-HERES-HELP<small>General</small></div>
+    </div>
+    <p class="numbers-footnote">
+      Some vanity phone numbers and domains require the licensing of the corresponding phone number/domain.
+      Subject to availability, limitations and conditions. $99/month rate pertains to one area code and a single
+      12-month contract, and does not include usage (i.e. minute) charges. In some states the license is for a
+      group of local exchanges rather than an area code. Looking for a different legal sector? Ask us — we have
+      hundreds more available.
+    </p>
+  </div>
+</section>
+
+<section id="domains">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Web addresses</div>
+      <h2>We help law firms light the internet on fire.</h2>
+      <p>These domains are available now, and hundreds more are ready to be licensed for your practice.</p>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-card">
+        <h3>Injury</h3>
+        <ul>
+          <li><a href="https://www.BIGINJURY.com" target="_blank" rel="noopener">www.BIGINJURY.com</a></li>
+          <li><a href="https://www.BADACCIDENT.com" target="_blank" rel="noopener">www.BADACCIDENT.com</a></li>
+          <li><a href="https://www.BADPAIN.info" target="_blank" rel="noopener">www.BADPAIN.info</a></li>
+          <li><a href="https://www.BADPAIN.net" target="_blank" rel="noopener">www.BADPAIN.net</a></li>
+          <li><a href="https://www.BADPAIN.org" target="_blank" rel="noopener">www.BADPAIN.org</a></li>
+          <li><a href="https://www.BIGINJURY.net" target="_blank" rel="noopener">www.BIGINJURY.net</a></li>
+          <li><a href="https://www.FLORIDAACCIDENT.com" target="_blank" rel="noopener">www.FLORIDAACCIDENT.com</a></li>
+          <li><a href="https://www.FLORIDAINJURY.com" target="_blank" rel="noopener">www.FLORIDAINJURY.com</a></li>
+        </ul>
+      </div>
+      <div class="domain-card">
+        <h3>Bankruptcy</h3>
+        <ul>
+          <li><a href="https://www.911BANKRUPT.com" target="_blank" rel="noopener">www.911BANKRUPT.com</a></li>
+          <li><a href="https://www.FASTBANKRUPTCYDOCS.com" target="_blank" rel="noopener">www.FASTBANKRUPTCYDOCS.com</a></li>
+        </ul>
+      </div>
+      <div class="domain-card">
+        <h3>Criminal</h3>
+        <ul>
+          <li><a href="https://www.CRIMELAWYER.com" target="_blank" rel="noopener">www.CRIMELAWYER.com</a></li>
+        </ul>
+      </div>
+      <div class="domain-card">
+        <h3>Divorce</h3>
+        <ul>
+          <li><a href="https://www.911DIVORCEDOCS.com" target="_blank" rel="noopener">www.911DIVORCEDOCS.com</a></li>
+        </ul>
+      </div>
+      <div class="domain-card">
+        <h3>General</h3>
+        <ul>
+          <li><a href="https://www.PERSONALLAWYER.com" target="_blank" rel="noopener">www.PERSONALLAWYER.com</a></li>
+          <li><a href="https://www.ASKATTORNEY.com" target="_blank" rel="noopener">www.ASKATTORNEY.com</a></li>
+          <li><a href="https://www.911LEGALDOCS.com" target="_blank" rel="noopener">www.911LEGALDOCS.com</a></li>
+        </ul>
+      </div>
+      <div class="domain-card">
+        <h3>Traffic &amp; Ticket</h3>
+        <ul>
+          <li><a href="https://www.TICKETLAWYER911.com" target="_blank" rel="noopener">www.TICKETLAWYER911.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">See it in action</div>
+      <h2>Watch how personal injury vanity numbers work</h2>
+    </div>
+    <a class="video-wrap" href="https://youtu.be/skfVMQF01bA" target="_blank" rel="noopener" aria-label="Watch the LawyerAdvertising.com video on YouTube">
+      <img src="https://i.ytimg.com/vi/skfVMQF01bA/hqdefault.jpg" alt="1-800-BIG INJURY video thumbnail">
+      <span class="play-button">▶</span>
+    </a>
+    <p class="video-caption">Watch on YouTube ↗</p>
+  </div>
+</section>
+
+<section class="terms">
+  <div class="container">
+    <div class="terms-box">
+      <h3>Terms &amp; Availability</h3>
+      <ul>
+        <li>This is not a referral service. Calls placed to your vanity number from consumers ring directly to your office.</li>
+        <li>You don't need an additional phone line, and you keep your existing phone number.</li>
+        <li>We can provide an affordable short or long-term license.</li>
+        <li>One lawyer per area code — for example, the area code 212 license routes 212-area callers to your office only.</li>
+        <li>In some states, the license applies to a group of local exchanges rather than an area code.</li>
+        <li>$99/month pertains to one area code and a single 12-month contract, and does not include usage (i.e. minute) charges.</li>
+        <li>Some vanity phone numbers and domains require the licensing of the corresponding phone number/domain. Subject to availability, limitations and conditions.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Let's find your firm's number.</h2>
+      <p class="lead">Featuring injury web addresses and vanity phone numbers, available now.</p>
+
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div><strong>Location</strong><span>South Florida</span></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">✉️</div>
+        <div><strong>Email</strong><a href="mailto:attorney@bellsouth.net">attorney@bellsouth.net</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div><strong>Call or text now</strong><a href="tel:9548571819">954-857-1819</a></div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send us a message</h3>
+      <p class="small">Tell us which number or domain you're interested in and we'll follow up.</p>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fname">Name</label>
+            <input id="fname" name="Name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="fphone">Phone</label>
+            <input id="fphone" name="Phone" type="tel" placeholder="(555) 555-5555">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="femail">Email</label>
+            <input id="femail" name="Email" type="email" placeholder="you@lawfirm.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="Message" placeholder="Which vanity number or domain are you interested in?"></textarea>
+          </div>
+        </div>
+        <button class="submit-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> LawyerAdvertising.com — Vanity numbers and domains for law firms.</span>
+    <a href="tel:9548571819">954-857-1819</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const fields = [
+      ['Name', document.getElementById('fname').value.trim()],
+      ['Phone', document.getElementById('fphone').value.trim()],
+      ['Email', document.getElementById('femail').value.trim()],
+      ['Message', document.getElementById('fmessage').value.trim()]
+    ];
+
+    const subject = 'Learning more about PI vanity number campaigns';
+    const body = fields.map(([label, value]) => `${label}: ${value}`).join('; ') + '; Regards.';
+
+    window.location.href = 'mailto:attorney@bellsouth.net'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+  });
+</script>
+
+</body>
+</html>
